@@ -1,9 +1,10 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import { useState, useEffect } from "react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const location = useLocation();
 
   useEffect(() => {
     const handleScroll = () => setIsScrolled(window.scrollY > 10);
@@ -88,9 +89,13 @@ export default function Navbar() {
     },
   ];
 
+  // Path match helper (for active state)
+  const isActive = (path: string) =>
+    location.pathname === path ||
+    (path !== "/" && location.pathname.startsWith(path));
+
   return (
     <nav
-      // New sticky style for perfect centering and width
       className={`navbar sticky left-0 top-0 z-50 w-full transition-all duration-300 ${
         isScrolled
           ? "bg-gradient-to-r from-blue-900/95 to-indigo-900/95 backdrop-blur-md shadow-2xl"
@@ -106,7 +111,6 @@ export default function Navbar() {
           : "0 4px 16px 0 rgba(31, 38, 135, 0.18)",
       }}
     >
-      {/* Container for proper centering */}
       <div className="max-w-7xl mx-auto w-full flex items-center justify-between px-2 sm:px-6 lg:px-8">
         {/* Start */}
         <div className="navbar-start flex items-center">
@@ -137,11 +141,15 @@ export default function Navbar() {
                 <li key={index} className="mb-1">
                   <Link
                     to={item.path}
-                    className="flex items-center gap-3 p-3 rounded-xl hover:bg-white/10 transition-all duration-300 group"
+                    className={`flex items-center gap-3 p-3 rounded-xl transition-all duration-300 group font-medium ${
+                      isActive(item.path)
+                        ? "bg-yellow-400/90 text-blue-900 shadow active-link"
+                        : "hover:bg-yellow-400/60 hover:text-blue-900"
+                    }`}
                     onClick={() => setIsMenuOpen(false)}
                   >
                     <span className="group-hover:scale-110 transition-transform duration-300">{item.icon}</span>
-                    <span className="font-medium">{item.name}</span>
+                    <span>{item.name}</span>
                   </Link>
                 </li>
               ))}
@@ -172,10 +180,14 @@ export default function Navbar() {
               <li key={index}>
                 <Link
                   to={item.path}
-                  className="flex items-center gap-2 px-4 py-2 rounded-xl hover:bg-white/10 transition-all duration-300 group font-medium text-base"
+                  className={`flex items-center gap-2 px-4 py-2 rounded-xl transition-all duration-300 group font-medium text-base ${
+                    isActive(item.path)
+                      ? "bg-yellow-400/90 text-blue-900 shadow active-link"
+                      : "hover:bg-yellow-400/60 hover:text-blue-900"
+                  }`}
                 >
                   <span className="group-hover:scale-110 transition-transform duration-300">{item.icon}</span>
-                  <span className="group-hover:text-yellow-300 transition-colors duration-300">{item.name}</span>
+                  <span>{item.name}</span>
                 </Link>
               </li>
             ))}
