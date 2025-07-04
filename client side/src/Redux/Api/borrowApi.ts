@@ -15,7 +15,7 @@ interface BorrowSummary {
 
 export const borrowApi = createApi({
   reducerPath: 'borrowApi',
-  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000/' }),
+  baseQuery: fetchBaseQuery({ baseUrl: 'http://localhost:3000' }),
   tagTypes: ['borrow', 'book'],
   endpoints: (builder) => ({
     // Borrow Book POST

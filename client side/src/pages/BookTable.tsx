@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-unused-vars */
 import { useState } from "react";
 import { useGetBooksQuery, useDeleteBookMutation } from "@/Redux/Api/baseApi";
 import { Link } from "react-router-dom";
