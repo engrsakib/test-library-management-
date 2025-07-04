@@ -4,7 +4,7 @@ import Blogs from "./Blogs"
 
 export default function HeroSection() {
   return (
-    <div>
+    <>
       <section
         className="relative bg-cover bg-center bg-no-repeat py-20 px-6 md:px-16 min-h-screen flex items-center overflow-hidden"
         style={{
@@ -170,6 +170,6 @@ export default function HeroSection() {
           animation: fade-in 1s ease-out;
         }
       `}</style>
-    </div>
+    </>
   )
 }

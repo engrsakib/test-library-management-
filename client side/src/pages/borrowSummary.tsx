@@ -258,18 +258,7 @@ const BorrowSummary = () => {
           </div>
         )}
 
-        {/* Bottom Info */}
-        <div className="text-center mt-8">
-          <p className="text-gray-500 text-sm">
-            Data updated in real-time.{" "}
-            <a
-              href="/help"
-              className="text-emerald-600 hover:text-emerald-800 font-medium transition-colors duration-300"
-            >
-              Need help understanding the data?
-            </a>
-          </p>
-        </div>
+       
       </div>
     </div>
   )

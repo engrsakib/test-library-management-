@@ -1,6 +1,6 @@
+
 import type { AppDispatch } from "@/store"
-import type { RootState } from "@reduxjs/toolkit/query"
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 
 
 
