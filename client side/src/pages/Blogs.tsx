@@ -245,16 +245,7 @@ const Blogs = () => {
           </div>
         </div>
 
-        {/* Bottom Info */}
-        <div className="text-center mt-8">
-          <p className="text-gray-500 text-sm">
-            Want to contribute?{" "}
-            <a href="/write" className="text-cyan-600 hover:text-cyan-800 font-medium transition-colors duration-300">
-              Write for us
-            </a>{" "}
-            and share your reading experiences.
-          </p>
-        </div>
+        
       </div>
     </div>
   )
