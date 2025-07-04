@@ -13,6 +13,8 @@ borrowRoutes.post("/", async (req, res) => {
 
   const book = await Book.findById(parseBody.book);
 
+  // console.log(book)
+
 //   if (!book) {
 //     res.status(404).json({
 //       message: "Book Not Found!",
@@ -23,7 +25,7 @@ borrowRoutes.post("/", async (req, res) => {
     book.copies -= parseBody.quantity;
     await book.save();
   }
-  console.log(book)
+  // console.log(book)
 
 //   Borrow Posted Routes 
 
