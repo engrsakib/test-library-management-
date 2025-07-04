@@ -332,19 +332,7 @@ const CreateBook = () => {
           </form>
         </div>
 
-        {/* Bottom Info */}
-        <div className="text-center mt-8">
-          <p className="text-gray-500 text-sm">
-            Need help? Check our{" "}
-            <a href="/help" className="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-300">
-              documentation
-            </a>{" "}
-            or{" "}
-            <a href="/contact" className="text-blue-600 hover:text-blue-800 font-medium transition-colors duration-300">
-              contact support
-            </a>
-          </p>
-        </div>
+      
       </div>
     </div>
   )

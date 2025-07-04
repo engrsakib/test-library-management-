@@ -354,18 +354,7 @@ const EditBook = () => {
           </form>
         </div>
 
-        {/* Bottom Info */}
-        <div className="text-center mt-8">
-          <p className="text-gray-500 text-sm">
-            Changes will be saved immediately.{" "}
-            <a
-              href="/help"
-              className="text-orange-600 hover:text-orange-800 font-medium transition-colors duration-300"
-            >
-              Need help?
-            </a>
-          </p>
-        </div>
+       
       </div>
     </div>
   )
